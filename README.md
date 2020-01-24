@@ -1,4 +1,54 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About:
+- Technologies used:
+    - react (with `create-react-app`)
+    - nodejs (with `express`)
+    - web sockets (with `socket.io`)
+    - Sass (.scss)
+    - JSDoc
+- Design approach:
+    - Pub-sub
+    - a server that:
+        - opens a websocket for clients to connect with
+        - listens for new incoming messages from connected clients
+        - emits message updates to any connected client in real-time
+    - a client that:
+        - allows a user to "sign in"
+        - opens a connection to the express server's websocket
+        - listens for message updates from the websocket
+        - emits new messages to the websocket
+        - renders messages real-time
+        - The UI should be simple and snappy
+- Things I would do if I had more time:
+    - Frontend:
+        - "componentize" relevent UI sections with selectors:
+            - .sign-in
+            - .chat
+            - .messages
+            - .message
+            - .badge
+            - .controls
+        - loading states
+        - probably a useContext() or useReducer() to make message state interactions portable
+        - better transitions from sign-in to viewing the chat
+    - Backend:
+        - use some relational db to store and manage messages/users/rooms/chat_histories/etc...
+    - Both:
+        - unit tests
+        - a more robust login procedure that does things like:
+            - prevent users from creating a username that already exists
+            - password login
+            - actual user creation
+        - the ability to persist chat histories
+        - create private rooms
+        - invite people to rooms
+        - read receipts
+        - `...{user} is typing`
+        - CORS
+        - security (all of it)
+        - emojis
+        - etc...
+        - (there's a very long list)
 
 ## Available Scripts
 
