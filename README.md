@@ -49,13 +49,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - transitions when messages pop in
     - backend:
         - use some relational db to store and manage messages/users/rooms/chat_histories/etc...
-    - both:
+    - both
         - unit tests
         - a more robust login procedure that does things like:
-            - prevent users from creating a username that already exists
+			- prevent users from creating a username that already exists
             - password login
             - actual user creation
-	- deployment so the app is usable outside of a local dev environment
+		- deployment so the app is usable outside of a local dev environment
         - the ability to persist chat histories
         - create private rooms
         - invite people to rooms
