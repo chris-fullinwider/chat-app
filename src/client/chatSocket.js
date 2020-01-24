@@ -10,7 +10,7 @@ export const setupChatSocket = (setMessages) => {
     let initialReceived = false;
     window.chatSocket = io.connect('http://localhost:9001');
 
-    window.chatSocket.on(socketEvents.FULFILL_INITIAL, (messages) => {
+    window.chatSocket.on(socketEvents.FULFILL_INITIAL_MESSAGES, (messages) => {
         // only update for this event if you haven't done so already
         if (!initialReceived) {
             initialReceived = true;
@@ -22,5 +22,5 @@ export const setupChatSocket = (setMessages) => {
         setMessages(messages);
     });
 
-    window.chatSocket.emit(socketEvents.REQUEST_INITIAL);
+    window.chatSocket.emit(socketEvents.REQUEST_INITIAL_MESSAGES);
 };

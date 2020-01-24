@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(243, 243, 243);
+}
+.app {
+    padding: 2vh 10vw 10vh 10vw;
+
+    input, textarea {
+        padding: 0.25rem;
+        border: 2px solid black;
+        font-size: 1rem;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 0.25rem;
+        border: 2px solid black;
+        font-size: 1rem;
+        transition: background-color 150ms, color 150ms;
+
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
+
+    header {
+        h1 {
+            border-bottom: 1px solid black;
+        }
+    }
+    .sign-in {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: left;
+
+        label {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        button {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            border-left: none;
+        }
+
+    }
+
+    .chat {
+        display: flex;
+        flex-direction: column;
+        min-height: 50vh;
+        max-height: 80vh;
+
+        .messages {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding-top:0.5rem;
+            height: 50vh;
+            overflow: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .message {
+            margin: 0 0.5rem 0.5rem 0.5rem;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .message.left {
+            justify-content: flex-start;
+            background-color: rgb(68, 68, 68);
+            .message-text {
+                border-left: 2px solid white;
+                margin-left: 1rem;
+                padding-left: 1rem;
+                color: white;
+            }
+            .badge {
+                color: white;
+                text-align: right;
+            }
+        }
+
+        .message.right {
+            justify-content: flex-end;
+            background-color: lightgrey;
+            .message-text {
+                border-right: 2px solid black;
+                margin-right: 1rem;
+                padding-right: 1rem;
+            }
+            .badge {
+                color: black;
+                text-align: left;
+            }
+        }
+
+        .badge {
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+            min-width: 8%;
+        }
+
+    }
+
+    .controls {
+        form {
+            display: flex;
+            justify-content: left;
+            button {
+                flex: 1;
+                border-right: none;
+            }
+            textarea {
+                flex: 4;
+            }
+        }
+    }
+}

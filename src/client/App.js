@@ -77,18 +77,18 @@ it needs to be at least three and no more than 10 characters
       },
     );
 
-    input.value = '' // clear the input
+    input.value = ''
   };
 
   /**
    * allow users to send messages by pressing 'enter'
+   *  - warning: jank approaching
    * @param {object} evt keydown event
    */
   const onMessageKeyDown = (evt) => {
     const { target } = evt;
     if (evt.which === 13) {
-      // kind of icky, but gets the job done
-      target.previousSibling.click();
+      target.previousSibling.click(); // kind of icky, but gets the job done
       evt.preventDefault(); // prevents cursor from going to next line
     }
   }
@@ -112,8 +112,6 @@ it needs to be at least three and no more than 10 characters
           <section className="chat">
             <h3>logged in as - {username}</h3>
 
-            <div className="message-container">
-
               <div ref={scrollRef} className="messages">
 
                 { messages.map((message, i) => {
@@ -124,9 +122,7 @@ it needs to be at least three and no more than 10 characters
                     <div className={`message ${alignment}`} key={`message-${i}`}>
 
                       { alignment === 'left' && (
-                        <span className="badge badge-left">
-                          {message.username}
-                        </span>
+                        <span className="badge badge-left"> You </span>
                       )}
 
                       <span className="message-text">{message.text}</span>
@@ -144,11 +140,14 @@ it needs to be at least three and no more than 10 characters
               <section className="controls">
                 <form onSubmit={onMessageSend}>
                   <button className="chat_send">send</button>
-                  <textarea id="outgoing-message" autoComplete="off" onKeyDown={onMessageKeyDown} />
+                  <textarea
+                    id="outgoing-message"
+                    style={{ resize: 'none'}}
+                    onKeyDown={onMessageKeyDown}
+                  />
                 </form>
               </section>
 
-            </div>
           </section>
         )
       }
