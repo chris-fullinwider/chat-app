@@ -3,6 +3,8 @@ import { socketEvents } from '../constants'
 /**
  * Sets up the chat socket
  *  - sets up listener for message updates
+ *  - this function should only ever run ONCE per session
+ *      - something will probably break if it gets run multiple times
  * @param {function} setMessages sets messages in the UI
  */
 export const setupChatSocket = (setMessages) => {

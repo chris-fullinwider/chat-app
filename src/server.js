@@ -1,12 +1,14 @@
 const express = require('express');
-const app = express();
 
+const app = express();
 const { socketEvents } = require('./constants')
 
+// init the server
 const server = app.listen(9001, () => {
     console.log("listening on port 9001")
 });
 
+// init the websocket
 const io = require("socket.io")(server);
 
 // store messages
