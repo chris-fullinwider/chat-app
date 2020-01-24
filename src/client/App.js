@@ -112,41 +112,43 @@ it needs to be at least three and no more than 10 characters
           <section className="chat">
             <h3>logged in as - {username}</h3>
 
-              <div ref={scrollRef} className="messages">
+            <div ref={scrollRef} className="messages">
 
-                { messages.map((message, i) => {
+              { messages.map((message, i) => {
 
-                  const alignment = message.username === username? 'left' : 'right';
+                const alignment = message.username === username? 'left' : 'right';
 
-                  return (
-                    <div className={`message ${alignment}`} key={`message-${i}`}>
+                return (
+                  <div className={`message ${alignment}`} key={`message-${i}`}>
 
-                      { alignment === 'left' && (
-                        <span className="badge badge-left"> You </span>
-                      )}
+                    { alignment === 'left' && (
+                      <span className="badge badge-left"> You </span>
+                    )}
 
-                      <span className="message-text">{message.text}</span>
+                    <span className="message-text">{message.text}</span>
 
-                      { alignment === 'right'  && (
-                        <span className="badge badge-right">
-                          {message.username}
-                        </span>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
+                    { alignment === 'right'  && (
+                      <span className="badge badge-right">
+                        {message.username}
+                      </span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
 
-              <section className="controls">
-                <form onSubmit={onMessageSend}>
-                  <button className="chat_send">send</button>
-                  <textarea
-                    id="outgoing-message"
-                    style={{ resize: 'none'}}
-                    onKeyDown={onMessageKeyDown}
-                  />
-                </form>
-              </section>
+            <section className="controls">
+              <form onSubmit={onMessageSend}>
+                <button>
+                  <span className="small">SEND</span>
+                </button>
+                <textarea
+                  id="outgoing-message"
+                  style={{ resize: 'none'}}
+                  onKeyDown={onMessageKeyDown}
+                />
+              </form>
+            </section>
 
           </section>
         )

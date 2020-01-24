@@ -25,6 +25,7 @@ body {
 
     header {
         h1 {
+            margin-top: 0;
             border-bottom: 1px solid black;
         }
     }
@@ -51,7 +52,10 @@ body {
         flex-direction: column;
         min-height: 50vh;
         max-height: 80vh;
-
+        padding: 0 2rem;
+        h3 {
+            margin-top: 0;
+        }
         .messages {
             border: 2px solid black;
             border-radius: 5px;
@@ -81,7 +85,6 @@ body {
             }
             .badge {
                 color: white;
-                text-align: right;
             }
         }
 
@@ -95,7 +98,6 @@ body {
             }
             .badge {
                 color: black;
-                text-align: left;
             }
         }
 
@@ -114,10 +116,13 @@ body {
             justify-content: left;
             button {
                 flex: 1;
+                font-size: 0.9rem;
                 border-right: none;
             }
             textarea {
                 flex: 4;
+                font-size: 1.2rem;
+                height: 4rem;
             }
         }
     }

@@ -2,30 +2,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Requirements
 1. node version 8+
-2. npm or yarn
+2. yarn or npm
 
 ### Using the Chat App
 1. open a terminal window and clone the repository
 2. `cd chat-app` (or whatever directory name you used when cloning)
 3. run `yarn install` or `npm install` to install dependencies
-4. run `yarn start` or `npm start` to kick of:
+4. run `yarn start` or `npm start` to initialize:
 	* The client on port 3000
 	* The server on port 9001
 5. open up multiple browsers to `http://localhost:3000`
 6. complete the sign in steps and have a chat with yourself ;)
 
 ### About:
-- Technologies used:
+- technologies used:
     - react (with `create-react-app`)
     - nodejs (with `express`)
     - web sockets (with `socket.io`)
-    - Sass (.scss)
-    - JSDoc
-- Design approach:
-    - Pub-sub
+    - sass (.scss)
+- design considerations during development:
+    - pub-sub
     - a server that:
         - opens a websocket for clients to connect with
         - listens for new incoming messages from connected clients
+        - manages the messages state for the session
         - emits message updates to any connected client in real-time
     - a client that:
         - allows a user to "sign in"
@@ -34,9 +34,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - emits new messages to the websocket
         - renders messages real-time
         - The UI should be simple and snappy
-- Things I would do if I had more time:
-    - Frontend:
-        - "componentize" relevent UI sections with selectors:
+- things I would do if I had more time:
+    - frontend:
+        - to accomodate further development scope, "componentize" relevent UI sections for the following selectors:
             - .sign-in
             - .chat
             - .messages
@@ -46,9 +46,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - loading states
         - probably a useContext() or useReducer() to make message state interactions portable
         - better transitions from sign-in to viewing the chat
-    - Backend:
+        - transitions when messages pop in
+    - backend:
         - use some relational db to store and manage messages/users/rooms/chat_histories/etc...
-    - Both:
+    - both:
         - unit tests
         - a more robust login procedure that does things like:
             - prevent users from creating a username that already exists
@@ -64,7 +65,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - emojis
         - etc...
         - (there's a very long list)
-
 
 ## Create React App Stuff
 
