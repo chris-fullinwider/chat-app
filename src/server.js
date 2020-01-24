@@ -14,7 +14,7 @@ let messages = [];
 
 // create connection handler
 io.on('connection', (socket) => {
-    console.log("New Connection")
+    console.log("New Connection");
 
     // handle request for initial messages
     socket.on(socketEvents.REQUEST_INITIAL_MESSAGES, () => {

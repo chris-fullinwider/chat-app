@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## About:
+
+### Requirements
+1. node version 8+
+2. npm or yarn
+
+### Using the Chat App
+1. open a terminal window and clone the repository
+2. `cd chat-app` (or whatever directory name you used when cloning)
+3. run `yarn install` or `npm install` to install dependencies
+4. run `yarn start` or `npm start` to kick of:
+	* The client on port 3000
+	* The server on port 9001
+5. open up multiple browsers to `http://localhost:3000`
+6. complete the sign in steps and have a chat with yourself ;)
+
+### About:
 - Technologies used:
     - react (with `create-react-app`)
     - nodejs (with `express`)
@@ -50,7 +65,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         - etc...
         - (there's a very long list)
 
-## Available Scripts
+
+## Create React App Stuff
 
 In the project directory, you can run:
 
