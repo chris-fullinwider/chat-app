@@ -55,6 +55,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
             - prevent users from creating a username that already exists
             - password login
             - actual user creation
+	- deployment so the app is usable outside of a local dev environment
         - the ability to persist chat histories
         - create private rooms
         - invite people to rooms
