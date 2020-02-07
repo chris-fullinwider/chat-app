@@ -115,7 +115,7 @@ it needs to be at least three and no more than ten characters
 
             { messages.map((message, i) => {
 
-              const alignment = message.username === username? 'left' : 'right';
+              const alignment = message.username === username ? 'left' : 'right';
 
               return (
                 <div className={`message ${alignment}`} key={`message-${i}`}>

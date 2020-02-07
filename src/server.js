@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
     });
 
     // handle incoming new message
-    socket.on( socketEvents.POST_NEW_MESSAGE, (message) => {
+    socket.on(socketEvents.POST_NEW_MESSAGE, (message) => {
         // message "manager"
         messages.push(message);
 
